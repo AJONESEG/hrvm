@@ -1,0 +1,23 @@
+/*
+// recive file is named EmailAlertRecive
+import MessageUI
+
+class YourInterfaceController: WKInterfaceController, MFMailComposeViewControllerDelegate {
+
+    // Action triggered by a button press or other event
+    @IBAction func sendEmailButtonPressed() {
+        if MFMailComposeViewController.canSendMail() {
+            let mailComposer = MFMailComposeViewController()
+            mailComposer.mailComposeDelegate = self
+            mailComposer.setToRecipients(["recipient@example.com"])
+            mailComposer.setSubject("Subject of the email")
+            mailComposer.setMessageBody("Body of the email", isHTML: false)
+            present(mailComposer, animated: true, completion: nil)
+        }
+    }
+
+    // Implement the delegate method to handle the result of the email composition
+    func mailComposeController(_ controller: MFMailComposeViewController, didFinishWith result: MFMailComposeResult, error: Error?) {
+        dismiss()
+    }
+}
